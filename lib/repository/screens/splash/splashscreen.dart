@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gro_zip/repository/screens/login/loginScreen.dart';
 
 import '../../../domain/constants/appcolors.dart';
 import '../../widgets/uihelper.dart';
@@ -10,6 +13,17 @@ class SplashScreen extends StatefulWidget{
 }
 
 class _SplashScreenState extends State<SplashScreen>{
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(
+            seconds: 3),(){
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context)=> LoginScreen()));
+    });
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -25,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              UiHelper.customImage(imgName: "img2.png"),
+              UiHelper.customImage(imgName: "splash.png"),
             ],
           ),
         ),

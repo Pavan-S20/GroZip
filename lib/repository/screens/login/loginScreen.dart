@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gro_zip/repository/screens/bottomnav/bottomnavscreen.dart';
 import 'package:gro_zip/repository/widgets/uihelper.dart';
 
 class LoginScreen extends StatelessWidget{
@@ -62,7 +63,9 @@ class LoginScreen extends StatelessWidget{
                       height: 48,
                       width: 295,
                       child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNavScreen()));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0XFFE23744),
                             shape: RoundedRectangleBorder(
